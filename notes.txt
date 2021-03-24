@@ -1,0 +1,2 @@
+sudo apt  install wireless-tools
+/etc/netplan/50-cloud-init.yaml
