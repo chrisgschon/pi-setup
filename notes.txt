@@ -8,3 +8,8 @@ sudo apt install wireless-tools
 sudo apt install docker-compose
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+# install ssh server
+sudo apt-get install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
