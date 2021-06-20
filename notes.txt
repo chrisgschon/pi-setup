@@ -1,4 +1,21 @@
+# https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview
+
+# steps for Ubuntu Server 20.04
+
 # set up wifi
+
+# edit network-config file
+
+wifis:
+  wlan0:
+    dhcp4: true
+    optional: true
+    access-points:
+      <wifi network name>:
+        password: "<wifi password>"
+        
+sudo netplan try
+sudo netplan apply
 sudo apt install wireless-tools
 
 # edit creds in here
@@ -8,6 +25,10 @@ sudo apt install wireless-tools
 sudo apt install docker-compose
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+#OR
+sudo wget -O  /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.25.0/docker-compose-Linux-x86_64
+sudo chmod +x /usr/local/bin/docker-compose
 
 # install ssh server
 sudo apt-get install openssh-server
